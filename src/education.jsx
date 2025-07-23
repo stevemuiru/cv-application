@@ -1,23 +1,24 @@
 import { useState } from 'react';
 
 export function Education() {
-    const [school, setSchool] = useState('')
-    const [study, setStudy] = useState('')
-    const [type, setType] = useState('')
-    const [submit, setSubmit] = useState(false) 
+  const [school, setSchool] = useState('');
+  const [study, setStudy] = useState('');
+  const [type, setType] = useState('');
+  const [submit, setSubmit] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        setSubmit(true)
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmit(true);
+  };
 
-    return (
-        <div>
-            <button onclick={() => setShowForm(!showForm)}>
-            {showForm ? 'Hide Info Form' : 'Add Information'}
-            </button>
+  return (
+    <div>
+      <button onClick={() => setShowForm(!showForm)}>
+        {showForm ? 'Hide Info Form' : 'Add Information'}
+      </button>
 
-            {showForm && (
+      {showForm && (
         <form onSubmit={handleSubmit}>
           <label>School:</label><br />
           <input type="text" onChange={(e) => setSchool(e.target.value)} required /><br />
@@ -31,7 +32,14 @@ export function Education() {
           <button type="submit">Submit Info</button>
         </form>
       )}
+
+      {submit && (
+        <div className="display">
+          <p><strong>School:</strong> {school}</p>
+          <p><strong>Title of Study:</strong> {study}</p>
+          <p><strong>Type of Study:</strong> {type}</p>
         </div>
-        
-    )
+      )}
+    </div>
+  );
 }
