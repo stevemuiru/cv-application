@@ -15,7 +15,7 @@ export function Information() {
   return (
     <div>
       <button onClick={() => setShowForm(!showForm)}>
-        {showForm ? 'Hide Info Form' : 'Add Information'}
+        {showForm ? 'Hide Info Form' : 'Add information'} 
       </button>
 
       {showForm && (
