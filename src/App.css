@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.form-preview-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    align-items: flex-start;
+  }
+  
+  .live-preview {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    min-width: 250px;
+  }
+  .info-toggle-btn {
+    display: flex;
+    align-items: center;
+    background-color: #005f73;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .info-toggle-btn:hover {
+    background-color: #0a9396;
+  }
+    

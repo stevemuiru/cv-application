@@ -1,43 +1,50 @@
 import { useState } from 'react';
 
 export function Education() {
-  const [school, setSchool] = useState('');
-  const [study, setStudy] = useState('');
-  const [type, setType] = useState('');
-  const [submit, setSubmit] = useState(false);
   const [showForm, setShowForm] = useState(false);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSubmit(true);
-  };
+  const [school, setSchool] = useState('');
+  const [degree, setDegree] = useState('');
+  const [gradYear, setGradYear] = useState('');
 
   return (
     <div>
       <button onClick={() => setShowForm(!showForm)}>
-        {showForm ? 'Hide Info Form' : 'Add Information'}
+        {showForm ? 'Hide Education Form' : 'Add education'}
       </button>
 
       {showForm && (
-        <form onSubmit={handleSubmit}>
-          <label>School:</label><br />
-          <input type="text" onChange={(e) => setSchool(e.target.value)} required /><br />
+        <div className="form-preview-container">
+          <form>
+            <label>School:</label><br />
+            <input
+              type="text"
+              value={school}
+              onChange={(e) => setSchool(e.target.value)}
+              required
+            /><br />
 
-          <label>Title of Study:</label><br />
-          <input type="text" onChange={(e) => setStudy(e.target.value)} required /><br />
+            <label>Degree:</label><br />
+            <input
+              type="text"
+              value={degree}
+              onChange={(e) => setDegree(e.target.value)}
+              required
+            /><br />
 
-          <label>Type of Study:</label><br />
-          <input type="text" onChange={(e) => setType(e.target.value)} required /><br />
+            <label>Graduation Year:</label><br />
+            <input
+              type="text"
+              value={gradYear}
+              onChange={(e) => setGradYear(e.target.value)}
+              required
+            /><br />
+          </form>
 
-          <button type="submit">Submit Info</button>
-        </form>
-      )}
-
-      {submit && (
-        <div className="display">
-          <p><strong>School:</strong> {school}</p>
-          <p><strong>Title of Study:</strong> {study}</p>
-          <p><strong>Type of Study:</strong> {type}</p>
+          <div className="live-preview">
+            <p><strong>School:</strong> {school}</p>
+            <p><strong>Degree:</strong> {degree}</p>
+            <p><strong>Graduation Year:</strong> {gradYear}</p>
+          </div>
         </div>
       )}
     </div>

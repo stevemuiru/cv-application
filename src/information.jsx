@@ -1,43 +1,60 @@
 import { useState } from 'react';
+import { FaUser } from 'react-icons/fa';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+
 
 export function Information() {
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [submit, setSubmit] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmit(true);
-  };
 
   return (
     <div>
-      <button onClick={() => setShowForm(!showForm)}>
-        {showForm ? 'Hide Info Form' : 'Add information'} 
-      </button>
+      <button onClick={() => setShowForm(!showForm)} className="info-toggle-btn">
+  <FaUser style={{ marginRight: '8px' }} />
+  General Information
+  {showForm ? (
+    <IoIosArrowUp style={{ marginLeft: '8px' }} />
+  ) : (
+    <IoIosArrowDown style={{ marginLeft: '8px' }} />
+  )}
+</button>
+
 
       {showForm && (
-        <form onSubmit={handleSubmit}>
-          <label>Name:</label><br />
-          <input type="text" onChange={(e) => setName(e.target.value)} required /><br />
+        <div className="form-preview-container">
+          <form>
+            <label>Name:</label><br />
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            /><br />
 
-          <label>Email:</label><br />
-          <input type="email" onChange={(e) => setEmail(e.target.value)} required /><br />
+            <label>Email:</label><br />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            /><br />
 
-          <label>Phone:</label><br />
-          <input type="text" onChange={(e) => setPhone(e.target.value)} required /><br />
+            <label>Phone:</label><br />
+            <input
+              type="text"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+            /><br />
+          </form>
 
-          <button type="submit">Submit Info</button>
-        </form>
-      )}
-
-      {submit && (
-        <div className="display">
-          <p><strong>Name:</strong> {name}</p>
-          <p><strong>Email:</strong> {email}</p>
-          <p><strong>Phone:</strong> {phone}</p>
+          <div className="live-preview">
+            <p><strong>Name:</strong> {name}</p>
+            <p><strong>Email:</strong> {email}</p>
+            <p><strong>Phone:</strong> {phone}</p>
+          </div>
         </div>
       )}
     </div>
