@@ -13,12 +13,22 @@ body{
   }
   
   .live-preview {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    min-width: 250px;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    background-color: #fafafa;
+    border-radius: 12px;
+    min-width: 300px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    transition: all 0.2s ease-in-out;
   }
+  
+  .live-preview:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+  }
+  
   .info-toggle-btn {
     display: flex;
     align-items: center;
@@ -27,7 +37,7 @@ body{
     padding: 10px 16px;
     border: none;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 2.5rem;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
   }
@@ -35,4 +45,24 @@ body{
   .info-toggle-btn:hover {
     background-color: #0a9396;
   }
-    
+
+  .toggle-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: none;
+    background-color: #005f73;
+    font-size: 2.5rem;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #005fa3;
+  }
+  .form-sections > * {
+    margin-bottom: 24px;
+  }
+  
+      

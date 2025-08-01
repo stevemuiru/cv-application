@@ -49,6 +49,8 @@ export function Information() {
               required
             /><br />
           </form>
+          <br />
+          <br />
 
           <div className="live-preview">
             <p><strong>Name:</strong> {name}</p>

@@ -4,10 +4,11 @@ import { Experience } from "./experience";
 
 export default function App() {
   return (
-    <div>
-      <Information />
-      <Education />
-      <Experience />
-    </div>
+    <div className="form-sections">
+    <Information />
+    <Education />
+    <Experience />
+  </div>
+  
   );
 }

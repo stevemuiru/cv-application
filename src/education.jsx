@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { FaGraduationCap } from 'react-icons/fa';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+
 
 export function Education() {
   const [showForm, setShowForm] = useState(false);
@@ -8,10 +11,12 @@ export function Education() {
 
   return (
     <div>
-      <button onClick={() => setShowForm(!showForm)}>
-        {showForm ? 'Hide Education Form' : 'Add education'}
+       <button onClick={() => setShowForm(!showForm)} className="toggle-btn">
+        <FaGraduationCap style={{ marginRight: '6px' }} />
+        Education
+        {showForm ? <IoIosArrowUp style={{ marginLeft: '6px' }} />
+                  : <IoIosArrowDown style={{ marginLeft: '6px' }} />}
       </button>
-
       {showForm && (
         <div className="form-preview-container">
           <form>

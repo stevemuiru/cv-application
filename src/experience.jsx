@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FaBuilding } from 'react-icons/fa';           
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 export function Experience() {
   const [showForm, setShowForm] = useState(false);
@@ -8,8 +10,11 @@ export function Experience() {
 
   return (
     <div>
-      <button onClick={() => setShowForm(!showForm)}>
-        {showForm ? 'Hide Experience Form' : 'Add experience'}
+       <button onClick={() => setShowForm(!showForm)} className="toggle-btn">
+        <FaBuilding style={{ marginRight: '6px' }} />
+        Company/Experience
+        {showForm ? <IoIosArrowUp style={{ marginLeft: '6px' }} />
+                  : <IoIosArrowDown style={{ marginLeft: '6px' }} />}
       </button>
 
       {showForm && (
